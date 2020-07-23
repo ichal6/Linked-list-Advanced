@@ -43,6 +43,27 @@ public class SinglyLinkedList {
     //
     // e.g. the result of inserting 42 at index 3 into [0, 1, 2, 3, 4] is [0, 1, 2, 42, 3, 4]
     public void insert(int index, int number) {
+        Link insertNode = new Link(number);
+        if(index == 0){
+            this.head = insertNode;
+            return;
+        }
+
+        if(index < 0){
+            throw new IndexOutOfBoundsException();
+        }
+
+        Link nodeBeforeIndex = head;
+
+        for (int indexOfSearchElement = 0; indexOfSearchElement < index - 1; indexOfSearchElement++) {
+             nodeBeforeIndex = nodeBeforeIndex.getNext();
+            if (nodeBeforeIndex == null) {
+                throw new IndexOutOfBoundsException();
+            }
+        }
+        Link nodeAfterIndex = nodeBeforeIndex.getNext();
+        nodeBeforeIndex.setNext(insertNode);
+        insertNode.setNext(nodeAfterIndex);
     }
 
     // Deletes the element at 'index' from the array.
