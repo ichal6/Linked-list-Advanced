@@ -49,7 +49,16 @@ public class SinglyLinkedList {
 
     // Returns the index of 'number' if it's in the array, otherwise -1;
     public int search(int number) {
-        return 0;
+        Link searchNode = head;
+        int index = 0;
+        while (searchNode != null){
+            if(searchNode.getValue() == number){
+                return index;
+            }
+            index++;
+            searchNode = searchNode.getNext();
+        }
+        return -1;
     }
 
     // Inserts 'number' at 'index' into the array shifting elements if necessary.
