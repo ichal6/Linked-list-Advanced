@@ -31,7 +31,20 @@ public class SinglyLinkedList {
 
     // Returns the number at 'index'.
     public int access(int index) {
-        return 0;
+        Link searchNode = head;
+        if(index == 0){
+            if(head == null){
+                throw new IndexOutOfBoundsException();
+            }
+            return head.getValue();
+        }
+        for (int indexOfSearchElement = 1; indexOfSearchElement <= index ; indexOfSearchElement++) {
+            searchNode = searchNode.getNext();
+            if(searchNode == null){
+                throw new IndexOutOfBoundsException();
+            }
+        }
+        return searchNode.getValue();
     }
 
     // Returns the index of 'number' if it's in the array, otherwise -1;
