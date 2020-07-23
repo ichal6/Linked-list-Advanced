@@ -1,6 +1,8 @@
 package com.codecool.datastructure;
 
-public class SinglyLinkedList {
+import java.util.List;
+
+public class SinglyLinkedList implements LinkedList {
 
     private class Link {
 

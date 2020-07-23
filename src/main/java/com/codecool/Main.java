@@ -1,5 +1,7 @@
 package com.codecool;
 
+import com.codecool.datastructure.DoubleLinkedList;
+import com.codecool.datastructure.LinkedList;
 import com.codecool.datastructure.SinglyLinkedList;
 
 public class Main {
@@ -8,7 +10,7 @@ public class Main {
         int n = Integer.valueOf(args[0]);
         String cmd = args[1];
 
-        SinglyLinkedList ll = new SinglyLinkedList();
+        LinkedList ll = new DoubleLinkedList();
 
         System.out.println("Building the linked list ... this may take a while :)");
         for (int i = 0; i < n; i++) {

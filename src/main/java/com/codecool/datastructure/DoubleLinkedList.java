@@ -1,6 +1,6 @@
 package com.codecool.datastructure;
 
-public class DoubleLinkedList {
+public class DoubleLinkedList implements LinkedList{
     private class Link {
 
         private int value;
