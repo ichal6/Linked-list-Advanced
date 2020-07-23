@@ -45,7 +45,9 @@ public class SinglyLinkedList {
     public void insert(int index, int number) {
         Link insertNode = new Link(number);
         if(index == 0){
+            Link oldHead = head;
             this.head = insertNode;
+            this.head.setNext(oldHead);
             return;
         }
 
